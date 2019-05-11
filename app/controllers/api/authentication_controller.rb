@@ -1,4 +1,4 @@
-class AuthenticationController < ApplicationController
+class Api::AuthenticationController < ApplicationController
   before_action :authorize_request, except: :login
 
   # POST /login
@@ -12,11 +12,6 @@ class AuthenticationController < ApplicationController
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end
-  end
-
-  # GET /logedin
-  def logedin
-    render json: { message: "You are logged in!", image: "https://media.giphy.com/media/KBfKueAjIJV8Q/giphy.gif" }, status: :ok
   end
 
   private
