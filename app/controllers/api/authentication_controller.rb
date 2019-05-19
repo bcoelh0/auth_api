@@ -1,3 +1,4 @@
+require 'json_web_token'
 class Api::AuthenticationController < ApplicationController
   before_action :authorize_request, except: :login
 
